@@ -4,13 +4,16 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const db = require('./config/database'); //PGAdmin database
+const db = require('./config/database'); //pgAdmin database
 
 // Database Test
 db.authenticate()
     .then(() => console.log('Database connected!'))
     .catch(err => console.log('Error: ' + err))
 
+
+
+//Routes
 app.get ('/', (req, res) =>
     res.send('Testing! Testing!'));
 
