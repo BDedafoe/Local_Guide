@@ -1,10 +1,14 @@
 require('dotenv').config()
 const express = require('express');
-const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
-const path = require('path');
+const methodOverride = require('method-override');
 const app = express();
 const db = require('./config/database'); //pgAdmin database
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 // Database Test
 db.authenticate()
@@ -15,7 +19,7 @@ db.authenticate()
 
 //Routes
 app.get ('/', (req, res) =>
-    res.send('Testing! Testing!'));
+    res.render('home'));
 
 app.use('/drinks', require('./routes/drinks'));
 

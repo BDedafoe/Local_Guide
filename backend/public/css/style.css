@@ -1,0 +1,113 @@
+body {
+    background: lightblue;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: fantasy, papyrus;
+    color: cornflowerblue;
+    text-align: center;
+}
+
+h2 {
+    color: coral;
+}
+
+main {
+    margin-right: 25px;
+    margin-left: 25px;
+    padding: 25px;
+    background-color: white;
+}
+
+form {
+    display: inline;
+    padding: 10px;
+}
+
+.btn.btn-primary {
+    margin-top: 10px;
+}
+
+#add {
+    background: cornflowerblue;
+    color: white;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    padding: 3px;
+    margin: 2px;
+}
+
+#add:hover {
+    background-color: coral;
+    color: white;
+}
+
+.form-check-input {
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 5px 100px 5px;
+    border-radius: 5px;
+    
+}
+
+/* Link Style */
+a {
+    color: coral;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+
+/* Nav Bar */
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    
+}
+
+nav li {
+    display: inline;
+    margin-right: 35px;
+}
+
+nav a {
+    color: white;
+    font-family: fantasy, papyrus;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: coral;
+    text-decoration: none;
+}
+
+/* Bonus Footer Added */
+.content-inside {
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+  
+.footer {
+    background: cornflowerblue;
+    color: white;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    margin-top: 10%;
+}
