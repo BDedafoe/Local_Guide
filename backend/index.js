@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express');
+const bodyParser = require('body-parser')
 const methodOverride = require('method-override');
 const app = express();
 const db = require('./config/database'); //pgAdmin database
