@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const db = require('./config/database');
+const db = require('./config/database'); //PGAdmin database
 
 // Database Test
 db.authenticate()
@@ -13,5 +13,7 @@ db.authenticate()
 
 app.get ('/', (req, res) =>
     res.send('Testing! Testing!'));
+
+app.use('/drinks', require('./routes/drinks'));
 
 app.listen(process.env.PORT, console.log(`Server started on ${process.env.PORT}`));

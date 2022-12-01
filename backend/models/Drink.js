@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
 
-const Drinks = db.define('drinks', {
+const Drink = db.define('drink', {
     place: {
         type: Sequelize.STRING
     },
@@ -16,4 +16,4 @@ const Drinks = db.define('drinks', {
     },
 })
 
-module.exports = Drinks;
+module.exports = Drink;
