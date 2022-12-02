@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../config/database');
 const User = require('../models/User')
 
-// Get drink list
+// Get user list
 router.get('/', (req, res) => 
     User.findAll()
         .then(users => {
@@ -12,7 +12,7 @@ router.get('/', (req, res) =>
         })
         .catch(err => console.log(err)));
 
-// Add a drink
+// Add a user
 router.get('/add', (req, res) => {
     const data = {
         first_name: 'Henry',

@@ -24,5 +24,6 @@ app.get ('/', (req, res) =>
 
 app.use('/drinks', require('./routes/drinks'));
 app.use('/users', require('./routes/users'));
+app.use('/foods', require('./routes/foods'));
 
 app.listen(process.env.PORT, console.log(`Server started on ${process.env.PORT}`));
