@@ -15,10 +15,10 @@ router.get('/', (req, res) =>
 // Add a user
 router.get('/add', (req, res) => {
     const data = {
-        first_name: 'Henry',
-        last_name: 'Ford',
-        email: 'DetriotLions@gmail.com',
-        password: '1245454',
+        first_name: 'Savannah',
+        last_name: 'Smokey',
+        email: 'Kitties@gmail.com',
+        password: 'Catreats42',
     }
 
 
