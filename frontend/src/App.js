@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css';
-import Users from './components/Users';
 import CurrentUserProvider from './contexts/CurrentUser';
 import Navigation from './Navigation';
 import Home from './Home';
@@ -15,17 +13,16 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/sign-up" component={SignUpForm} />
-          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/sign-up" element={<SignUpForm/>} />
+          <Route exact path="/login" element={<LoginForm/>} />
           {/* <Route exact path="/places" component={PlaceIndex} />
           <Route exact path="/places/new" component={NewPlaceForm} />
           <Route exact path="/places/:placeId" component={PlaceDetails} />
           <Route exact path="/places/:placeId/edit" component={EditPlaceForm} /> */}
-          <Route path="/" component={Error404} />
+          <Route path="/" element={<Error404/>} />
         </Routes>
       </BrowserRouter>
-      <Users />
     </CurrentUserProvider>
 
     // <div className="App">

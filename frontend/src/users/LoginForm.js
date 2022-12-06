@@ -4,7 +4,7 @@ import { CurrentUser } from "../contexts/CurrentUser"
 
 function LoginForm() {
 
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     const { setCurrentUser } = useContext(CurrentUser)
 
