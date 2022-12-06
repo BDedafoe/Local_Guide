@@ -1,23 +1,24 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
-const db = require('./config/database'); //pgAdmin database connectionghytg
-const cors = require('cors')
+const cors = require('cors');
+const defineCurrentUser = require('./middleware/defineCurrentUser')
+
 app.use(cors({
     origin: 'http://localhost:3007',
     credentials: true
-}))
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
+}));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(defineCurrentUser)
 
 // Database Test
-db.authenticate()
-    .then(() => console.log('Database Connected!'))
-    .catch(err => console.log('Error: ' + err))
-
+// db.authenticate()
+//     .then(() => console.log('Database Connected!'))
+//     .catch(err => console.log('Error: ' + err));
+app.use(express.urlencoded({ extended: true }));
 //Root Route
 app.get ('/', (req, res) =>
     res.send("Connected to the Backend!"));

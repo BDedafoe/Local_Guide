@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/database');
-const Food = require('../models/Food')
+const db = require('../models');
+const { Food } = db
 
 // Get food list
 router.get('/', (req, res) => 
