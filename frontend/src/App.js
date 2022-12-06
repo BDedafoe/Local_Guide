@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CurrentUserProvider from './contexts/CurrentUser';
 import Navigation from './Navigation';
 import Home from './Home';
