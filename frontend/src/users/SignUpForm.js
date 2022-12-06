@@ -32,25 +32,25 @@ function SignUpForm() {
 			<form onSubmit={handleSubmit}>
 				<div className="row">
 					<div className="col-sm-6 form-group">
-						<label htmlFor="firstName">First Name</label>
+						<label htmlFor="first_name">First Name</label>
 						<input
 							required
-							value={user.firstName}
-							onChange={e => setUser({ ...user, firstName: e.target.value })}
+							value={user.first_name}
+							onChange={e => setUser({ ...user, first_name: e.target.value })}
 							className="form-control"
-							id="firstName"
-							name="firstName"
+							id="first_name"
+							name="first_name"
 						/>
 					</div>
 					<div className="col-sm-6 form-group">
-						<label htmlFor="lastName">Last Name</label>
+						<label htmlFor="last_name">Last Name</label>
 						<input
 							required
-							value={user.lastName}
-							onChange={e => setUser({ ...user, lastName: e.target.value })}
+							value={user.last_name}
+							onChange={e => setUser({ ...user, last_name: e.target.value })}
 							className="form-control"
-							id="lastName"
-							name="lastName"
+							id="last_name"
+							name="last_name"
 						/>
 					</div>
 				</div>
