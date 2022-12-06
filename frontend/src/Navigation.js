@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import { useNavigate } from "react-router";
 import { CurrentUser } from './contexts/CurrentUser';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function Navigation() {
 
@@ -32,27 +35,22 @@ function Navigation() {
     }
 
     return (
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" onClick={() => navigate("/")}>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onClick={() => navigate("/places")}>
-                        Places
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onClick={() => navigate("/places/new")}>
-                        Add Place
-                    </a>
-                </li>
-                {loginActions}
-            </ul>
-        </nav>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="/">Local Guide</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="/food">Food</Nav.Link>
+                <Nav.Link href="/drink">Drinks</Nav.Link>
+              </Nav>
+              
+            </Navbar.Collapse>
+            {loginActions}
+          </Container>
+        </Navbar>
     )
 }
 
 export default Navigation;
+

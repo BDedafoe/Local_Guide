@@ -21,15 +21,10 @@ function App() {
           <Route exact path="/places/new" component={NewPlaceForm} />
           <Route exact path="/places/:placeId" component={PlaceDetails} />
           <Route exact path="/places/:placeId/edit" component={EditPlaceForm} /> */}
-          <Route path="/" element={<Error404/>} />
+          <Route path="/1" element={<Error404/>} />
         </Routes>
       </BrowserRouter>
     </CurrentUserProvider>
-
-    // <div className="App">
-    //   <h1>Local's Guide!</h1>
-    //   <Users />
-    // </div>
   );
 }
 

@@ -61,7 +61,7 @@ form {
 }
 
 .homeContainer {
-    margin: 6%;
+    margin: 3%;
 }
 
 img {
@@ -74,4 +74,19 @@ img {
 
 .slideTwo h2 {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Error Page CSS */
+.errorPage {
+    padding: 20px;
+    text-align: center;
+}
+
+.errorPic {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }

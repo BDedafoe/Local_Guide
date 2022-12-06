@@ -1,11 +1,12 @@
 function Error404() {
+
     return (
-        <main>
-            <h1>404: PAGE NOT FOUND</h1>
-            <p>Oops, sorry, we can't find this page!</p>
-            <img src="http://localhost:4000/images/savannahError.png" alt="savannah pic" />
-        </main>
+        <div className="errorPage">
+            <h1>404 Error</h1>
+            <h3>Hang on! We can't find this page...</h3>
+            <img className="errorPic" src="http://localhost:4000/images/savannahError.png" alt="savannahError" />
+        </div>
     );
 }
 
-export default Error404;
+export default Error404

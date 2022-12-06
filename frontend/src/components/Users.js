@@ -4,7 +4,7 @@ function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch("/backend/models/User").then(res => {
+        fetch(`http://localhost:4000/users/`).then(res => {
             if(res.ok) {
                 return res.json()
             }

@@ -6,8 +6,8 @@ function SignUpForm() {
 	const navigate = useNavigate()
 
 	const [user, setUser] = useState({
-		firstName: '',
-		lastName: '',
+		first_name: '',
+		last_name: '',
 		email: '',
 		password: ''
 	})
@@ -23,7 +23,7 @@ function SignUpForm() {
 			body: JSON.stringify(user)
 		})
 
-		navigate.push(`/`)
+		navigate(`/`) //taking you back to the home page after signing up
 	}
 
 	return (
