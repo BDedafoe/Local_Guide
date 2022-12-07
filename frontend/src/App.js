@@ -6,6 +6,7 @@ import Home from './Home';
 import SignUpForm from './users/SignUpForm';
 import LoginForm from './users/LoginForm';
 import Error404 from './Error404';
+import FoodPage from './views/FoodPage';
 
 function App() {
   return (
@@ -17,10 +18,8 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/sign-up" element={<SignUpForm/>} />
           <Route exact path="/login" element={<LoginForm/>} />
-          {/* <Route exact path="/places" component={PlaceIndex} />
-          <Route exact path="/places/new" component={NewPlaceForm} />
-          <Route exact path="/places/:placeId" component={PlaceDetails} />
-          <Route exact path="/places/:placeId/edit" component={EditPlaceForm} /> */}
+          <Route exact path="/food" element={<FoodPage/>} />
+         
           <Route path="/" component={<Error404/>} />
         </Routes>
       </BrowserRouter>
