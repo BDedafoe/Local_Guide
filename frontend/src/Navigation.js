@@ -10,7 +10,7 @@ function Navigation() {
     const { currentUser } = useContext(CurrentUser)
 
     let loginActions = (
-        <div className="rightNav">
+        <div className="leftNav">
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/sign-up">Sign Up</Nav.Link>
