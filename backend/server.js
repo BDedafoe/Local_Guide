@@ -2,31 +2,67 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path')
 const cors = require('cors');
-const defineCurrentUser = require('./middleware/defineCurrentUser')
+const corsOptions = require('./config/corsOptions')
+const db = require('./config/config');  //PGAdmin database
+const { logger, logEvents } = require('./middleware/logger')
+const errorHandler = require('./middleware/errorHandler')
+const cookieParser = require('cookie-parser')
 
 app.use(cors({
     origin: 'http://localhost:3007',
     credentials: true
 }));
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(defineCurrentUser)
 
-// Database Test
-// db.authenticate()
-//     .then(() => console.log('Database Connected!'))
-//     .catch(err => console.log('Error: ' + err));
-app.use(express.urlencoded({ extended: true }));
-//Root Route
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
+app.use(logger)
+
+// app.use(cors(corsOptions))
+
+app.use(cookieParser())
+
+app.use('/', express.static(path.join(__dirname, 'public')))
+
+app.use('/auth', require('./routes/authRoutes'))
+app.use('/users', require('./routes/userRoutes'))
+app.use('/notes', require('./routes/noteRoutes'))
+
+// //Root Route
 app.get ('/', (req, res) =>
     res.send("Connected to the Backend!"));
 
-//Database Routes
-app.use('/drinks', require('./controllers/drinks'));
-app.use('/users', require('./controllers/users'));
 app.use('/foods', require('./controllers/foods'));
+app.use('/drinks', require('./controllers/drinks'));
+app.use('/user', require('./routes/userRoutes'));
+
+app.all('*', (req, res) => {
+    res.status(404)
+    if (req.accepts('html')) {
+        res.sendFile(path.join(__dirname, 'views', '404.html'))
+    } else if (req.accepts('json')) {
+        res.json({ message: '404 Not Found' })
+    } else {
+        res.type('txt').send('404 Not Found')
+    }
+})
+
+app.use(errorHandler)
+
+
+
+// //Database Routes
+// app.use('/drinks', require('./controllers/drinks'));
+
+// app.use('/foods', require('./controllers/foods'));
+
+// app.use('/user', require('./routes/userRoutes'));
+
+
 
 //Server
 app.listen(process.env.PORT, console.log(`Server started on Port ${process.env.PORT}`));
+

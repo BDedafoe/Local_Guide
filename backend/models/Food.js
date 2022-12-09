@@ -24,3 +24,26 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Food;
 };
+
+// const Sequelize = require('sequelize');
+// const db = require('../config/config');
+
+// const Food = db.define('foods', {
+//   place: {
+//     type: Sequelize.STRING
+//   },
+//   city: {
+//     type: Sequelize.STRING
+//   },
+//   state: {
+//     type: Sequelize.STRING
+//   },
+//   cuisine: {
+//     type: Sequelize.STRING
+//   }
+// });
+
+// Food.sync().then(() => {
+//   console.log('table created');
+// });
+// module.exports = Food;

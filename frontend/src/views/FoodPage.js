@@ -5,31 +5,31 @@ function FoodPage(data) {
 
 	const navigate = useNavigate()
 	
-	const [places, setPlaces] = useState([])
+	const [foods, setFoods] = useState([])
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:4000/foods`)
+			const response = await fetch(`http://localhost:4000/food`)
 			const resData = await response.json()
-			setPlaces(resData)
+			setFoods(resData)
 		}
 		fetchData()
 	}, [])
 
-	let placesFormatted = places.map((place) => {
+	let foodsFormatted = foods.map((food) => {
 		return (
-			<div className="col-sm-6" key={place.placeId}>
+			<div className="col-sm-6" key={food.foodId}>
 				<h2>
-					<a href="#" onClick={() => navigate(`/foods/${place.placeId}`)} >
-						{place.name}
+					<a href="#" onClick={() => navigate(`/food/${food.foodId}`)} >
+						{food.cuisine}
 					</a>
 				</h2>
 				<p className="text-center">
-					{place.cuisines}
+					{food.cuisine}
 				</p>
-				<img style={{ maxWidth: 200 }} src={place.pic} alt={place.name} />
+				<img style={{ maxWidth: 200 }} src={food.pic} alt={food.name} />
 				<p className="text-center">
-					Located in {place.city}, {place.state}
+					Located in {food.city}, {food.state}
 				</p>
 			</div>
 		)
@@ -38,7 +38,7 @@ function FoodPage(data) {
 		<main>
 			<h1>Places to Rant or Rave About</h1>
 			<div className="row">
-				{placesFormatted}
+				{foodsFormatted}
 			</div>
 		</main>
 	)

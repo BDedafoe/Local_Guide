@@ -3,7 +3,7 @@ import { CurrentUser } from './contexts/CurrentUser';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Clock from './features/Clock';
 
 function Navigation() {
 
@@ -13,7 +13,7 @@ function Navigation() {
         <div className="leftNav">
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+                <Nav.Link href="/register">Register</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -41,6 +41,9 @@ function Navigation() {
                 <Nav.Link href="/food">Food</Nav.Link>
                 <Nav.Link href="/drink">Drinks</Nav.Link>
               </Nav>
+
+              <Clock/>
+
             </Navbar.Collapse>
             {loginActions}
           </Container>
