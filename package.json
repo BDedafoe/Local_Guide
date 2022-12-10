@@ -1,0 +1,22 @@
+{
+  "name": "local_guide",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "./backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd ./backend && node server.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BDedafoe/Local_Guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BDedafoe/Local_Guide/issues"
+  },
+  "homepage": "https://github.com/BDedafoe/Local_Guide#readme"
+}

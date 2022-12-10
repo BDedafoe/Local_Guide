@@ -1,9 +1,9 @@
-const User = require('../models/User')
-const Note = require('../models/Note')
+const User = require('../models/user')
+const Note = require('../models/note')
 const bcrypt = require('bcrypt')
 const db = require("../models")
 
-const { } = db
+const { user } = db
 
 // @desc Get all users
 // @route GET /users

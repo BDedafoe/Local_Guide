@@ -39,6 +39,12 @@ app.use('/user', require('./routes/userRoutes'));
 
 app.use('/api/user', require('./routes/userRoutes'));
 
+// serve static front end in production mode
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
+}
+
+
 
 app.all('*', (req, res) => {
     res.status(404)
@@ -52,17 +58,6 @@ app.all('*', (req, res) => {
 })
 
 app.use(errorHandler)
-
-
-
-// //Database Routes
-// app.use('/drinks', require('./controllers/drinks'));
-
-// app.use('/foods', require('./controllers/foods'));
-
-// app.use('/user', require('./routes/userRoutes'));
-
-
 
 //Server
 app.listen(process.env.PORT, console.log(`Server started on Port ${process.env.PORT}`));
