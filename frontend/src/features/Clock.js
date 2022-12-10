@@ -10,7 +10,7 @@ function Clock() {
     }, 1000);
   }, []);
 
-  return <div className="clockContainer">{clockState}</div>;
+  return <div className="clockContainer">Your Local Time Is: {clockState}</div>;
 }
 
 export default Clock;

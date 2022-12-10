@@ -27,9 +27,6 @@ app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-app.use('/auth', require('./routes/authRoutes'))
-app.use('/users', require('./routes/userRoutes'))
-app.use('/notes', require('./routes/noteRoutes'))
 
 // //Root Route
 app.get ('/', (req, res) =>
@@ -38,6 +35,10 @@ app.get ('/', (req, res) =>
 app.use('/foods', require('./controllers/foods'));
 app.use('/drinks', require('./controllers/drinks'));
 app.use('/user', require('./routes/userRoutes'));
+// app.use('/authController', require('./controllers/authController'));
+
+app.use('/api/user', require('./routes/userRoutes'));
+
 
 app.all('*', (req, res) => {
     res.status(404)

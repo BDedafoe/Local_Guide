@@ -1,7 +1,3 @@
-html {
-    background-color: black;
-}
-
 body {
     background-color: black;
     text-align: center;
@@ -89,6 +85,5 @@ img {
 
 .clockContainer {
     color: gold;
-    align-items: center;
-    padding-right: 40%;
+    padding-right: 150px;
 }

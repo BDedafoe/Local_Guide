@@ -8,6 +8,7 @@ import LoginForm from './users/LoginForm';
 import Error404 from './Error404';
 import FoodPage from './views/FoodPage';
 import FoodDetails from './views/FoodDetails';
+import Login from './views/Login';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/register" element={<RegisterForm/>} />
-          <Route exact path="/login" element={<LoginForm/>} />
+          <Route exact path="/login" element={<Login/>} />
           <Route exact path="/food" element={<FoodPage/>} />
           <Route exact path="/food/:foodId" component={<FoodDetails/>} />
           <Route path="/" component={<Error404/>} />
