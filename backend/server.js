@@ -40,9 +40,9 @@ app.use('/drinks', require('./controllers/drinks'));
 app.use('/api/user', require('./routes/userRoutes'));
 
 // serve static front end in production mode
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, 'client', 'build')));
-// }
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
+}
 
 
 
