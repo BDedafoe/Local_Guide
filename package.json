@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/BDedafoe/Local_Guide#readme",
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3"
   }
 }
