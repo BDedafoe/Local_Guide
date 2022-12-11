@@ -3,7 +3,7 @@ const Note = require('../models/note')
 const bcrypt = require('bcrypt')
 const db = require("../models")
 
-const { user } = db
+const { User } = db
 
 // @desc Get all users
 // @route GET /users

@@ -132,10 +132,13 @@
 //     deleteUser
 // }
 
-const User = require('../models/user');
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const asyncHandler = require('express-async-handler');
+const db = require("../models")
+
+const { User } = db
 
 //Web Token
 const signToken = (id) => {
