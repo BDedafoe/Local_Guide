@@ -12,7 +12,7 @@ function Home() {
                 alt="First slide" />
               <Carousel.Caption>
                 <h2>Traveling?</h2>
-                <h4>Checkout some places the local's recommend!</h4>
+                <h4>Checkout some places the locals recommend!</h4>
               </Carousel.Caption>
             </div>
           </Carousel.Item>
