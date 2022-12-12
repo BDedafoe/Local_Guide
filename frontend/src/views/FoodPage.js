@@ -36,7 +36,7 @@ function FoodPage(data) {
 	})
 	return (
 		<main>
-			<h1>Places to Rant or Rave About</h1>
+			<h1>Check out some local eats!</h1>
 			<div className="row">
 				{foodsFormatted}
 			</div>

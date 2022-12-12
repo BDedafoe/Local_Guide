@@ -1,24 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Abel&family=Bowlby+One&family=Roboto:ital,wght@1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@1,100;1,300;1,400&display=swap');
+
+*html {
+    margin: 0%;
+    text-align: center;
+  }
+  
 body {
-    background-color: black;
-    text-align: center;
-}
 
-h1 {
+    height: 100vh;
+    /* max-zoom: 50%; */
+    
+  }
+  
+.App {
     text-align: center;
-    color: cornflowerblue;
-}
-
-h2 {
-    text-align: center;
-    color: whitesmoke;
-}
-
-main {
-    margin-right: 20px;
-    margin-left: 20px;
-    padding: 60px 50px;
-    background-color: white;
-}
+  }
 
 .leftNav {
     display: inline;
@@ -27,16 +24,15 @@ main {
 }
 
 
-
-/* div.me-auto.navbar-nav {
-   
-} */
-
-
-
-form {
-    display: inline;
+.login-container {
+    font-size: 20px;
+    font-weight: bolder;
+    color: darkgreen;
+    text-shadow: 2px 2px 2px whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
+
 
 .inactive {
     color: lightsalmon;
@@ -46,6 +42,7 @@ form {
     border: 1px solid gray;
 }
 
+/* Home Page CSS */
 .homeContainer {
     margin: 0;
     padding: 40px;
@@ -83,7 +80,180 @@ img {
     width: 70%;
 }
 
+/* CSS Clock */
 .clockContainer {
     color: gold;
     padding-right: 150px;
 }
+
+
+
+
+  
+  /* Reister form CSS */
+  .register-form {
+    padding: 0px 330px 0px 330px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: darkgreen;
+    text-shadow: 2px 2px 2px whitesmoke;
+    font-family: 'Roboto', sans-serif;
+   
+  }
+  
+  .register-container {
+    font-weight: bolder;
+    text-align: center;
+    color: rgb(152, 0, 0);
+    text-shadow: 2px 2px 2px whitesmoke;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+
+
+  button.btn-block{ 
+    background: #4da1ab;
+    border: 5px solid white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    margin: 0 0 0 10px;
+  }
+  
+  button.btn-block:hover {
+    background-color: lightsalmon ;
+  }
+  
+  /* Header CSS */
+  .App-header {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+    font-weight: bold;
+    text-shadow: 2px 2px 2px whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 75px;
+    color: darkgreen;
+    text-shadow: 3px 3px 3px whitesmoke;
+  }
+  
+  /* Nav Link CSS */
+  a.nav-link {
+    text-decoration: none;
+    padding: 5px;
+    font-size: 30px;
+  }
+  
+  a.nav-link:hover {
+    color: rgb(156, 12, 12);
+    text-shadow: 3px 3px 3px gray;
+  }
+  
+  /* Form CSS */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    
+  }
+  
+  input {
+    box-shadow: 0px 15px 10px rgb(63, 60, 60);
+  }
+  
+  label {
+    padding-top: 10px;
+  }
+  
+  /* Dashboard CSS */
+  .dashboard-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 20px;
+  }
+  
+   .dashboard-list{
+    align-self: flex-start;
+    min-width: 40vw;
+    
+  }
+  
+  .dashboard-container {
+    margin: 5%;
+      
+  }
+  
+
+  /* CSS Grocery List */
+  .fixed-list-container {
+    -webkit-position: -webkit-sticky;
+    position: sticky;
+    top: 5%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 10px;
+  }
+  
+  /* Recipe CSS */
+  .search-form{
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-bar {
+    width: 50%;
+    border:none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 10px rgb(63, 60, 60);
+    font-family: 'Roboto', sans-serif;
+  }
+  .search-button { 
+    background: #4da1ab;
+    border: 5px solid whitesmoke;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    margin: 0 0 0 10px;
+  }
+  .search-button:hover {
+    background-color: lightsalmon ;
+  }
+  
+  button.submitButton { 
+    background: #4da1ab;
+    border: 5px solid whitesmoke;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    margin: 0 0 0 10px;
+  }
+  
+  button.submitButton:hover {
+    background-color: lightsalmon ;
+  }
+  
+  .form-control {
+    font-family: 'Roboto', sans-serif;
+  }
+  

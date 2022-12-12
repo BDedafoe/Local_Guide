@@ -40,6 +40,7 @@ function Navigation() {
               <Nav className="me-auto">
                 <Nav.Link href="/food">Food</Nav.Link>
                 <Nav.Link href="/drink">Drinks</Nav.Link>
+                <Nav.Link href="/note">Notes</Nav.Link>
               </Nav>
 
               <Clock/>

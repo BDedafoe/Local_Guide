@@ -4,11 +4,9 @@ import { useDispatch } from 'react-redux'
 import { setCredentials } from '../auth/authSlice'
 import { useLoginMutation } from '../auth/authApiSlice'
 import usePersist from '../hooks/usePersist'
-import useTitle from '../hooks/useTitle'
 import PulseLoader from 'react-spinners/PulseLoader'
 
 const Login = () => {
-    useTitle('Login')
 
     const userRef = useRef()
     const errRef = useRef()

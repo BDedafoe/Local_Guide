@@ -9,26 +9,26 @@ const db = require('./config/config');  //PGAdmin database
 const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser')
+const defineCurrentUser = require('./middleware/defineCurrentUser')
 
-app.use(cors({
-    origin: 'http://localhost:3007',
-    credentials: true
-}));
+// app.use(cors({
+//     origin: 'http://localhost:3007',
+//     credentials: true
+// }));
 
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(logger)
-
-// app.use(cors(corsOptions))
-
+app.use(defineCurrentUser)
+app.use(cors(corsOptions))
 app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
 
-// //Root Route
+// Root Route
 app.get ('/', (req, res) =>
     res.send("Connected to the Backend!"));
 
@@ -37,26 +37,14 @@ app.use('/drinks', require('./controllers/drinks'));
 // app.use('/user', require('./routes/userRoutes'));
 
 
-app.use('/api/user', require('./routes/userRoutes'));
+app.use('/api/User', require('./routes/userRoutes'));
 
 // serve static front end in production mode
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, '../frontend', 'build')));
+    app.use(express.static(path.join(__dirname, 'public', 'build')));
 }
 
-
-
-// app.all('*', (req, res) => {
-//     res.status(404)
-//     if (req.accepts('html')) {
-//         res.sendFile(path.join(__dirname, 'views', '404.html'))
-//     } else if (req.accepts('json')) {
-//         res.json({ message: '404 Not Found' })
-//     } else {
-//         res.type('txt').send('404 Not Found')
-//     }
-// })
-
+// Error Handling
 app.use(errorHandler)
 
 //Server

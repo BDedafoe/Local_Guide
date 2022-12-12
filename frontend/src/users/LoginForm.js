@@ -1,68 +1,75 @@
-import { useContext, useState } from "react"
-import { useNavigate } from "react-router"
-import { CurrentUser } from "../contexts/CurrentUser"
+import { useState, useEffect } from 'react';
+import { FaSignInAlt } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { login, reset } from '../auth/authSlice';
 
-function LoginForm() {
 
-    const navigate = useNavigate()
-
-    const { setCurrentUser } = useContext(CurrentUser)
-
-    const [credentials, setCredentials] = useState({
+const LoginForm = () => {
+    const [formData, setFormData] = useState({
         email: '',
         password: ''
-    })
+    });
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { user, status, error, message } = useSelector(state => state.auth);
 
-    const [errorMessage, setErrorMessage] = useState(null)
+    useEffect(() => {
+        document.title = 'Login';
+        if (error !== null) {
+            toast.error(message);
+            console.log(status)
+            dispatch(reset());
+        }
+        if (user) {
+            toast.success(message);
+            navigate('/');
 
-    async function handleSubmit(e) {
+        }
+        
+        }, [user, error, status, message, navigate, dispatch]);
+    
+    
+    const onChange = e => setFormData({ ...formData, [e.target.id]: e.target.value });
+    const onSubmit = e => {
         e.preventDefault()
-       
+        console.log(formData);
+        dispatch(login(formData));
+    };
 
-    }
 
+
+    
+    
     return (
-        <main>
+        <div className="login-container">
             <h1>Login</h1>
-            {errorMessage !== null
-                ? (
-                    <div className="alert alert-danger" role="alert">
-                        {errorMessage}
-                    </div>
-                )
-                : null
-            }
-            <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            required
-                            value={credentials.email}
-                            onChange={e => setCredentials({ ...credentials, email: e.target.value })}
-                            className="form-control"
-                            id="email"
-                            name="email"
-                        />
-                    </div>
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            required
-                            value={credentials.password}
-                            onChange={e => setCredentials({ ...credentials, password: e.target.value })}
-                            className="form-control"
-                            id="password"
-                            name="password"
-                        />
-                    </div>
+            <FaSignInAlt />
+            <h3>Please sign in to your account</h3>
+            <form className="register-form">
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="Enter email"
+                        onChange={e => onChange(e)} />
                 </div>
-                <input className="btn btn-primary" type="submit" value="Login" />
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="password"
+                        className="form-control"
+                        id="password"
+                        placeholder="Enter password"
+                        onChange={e => onChange(e)} />
+                </div>
+                <div className="form-group">
+                <button type="submit" className="btn-block" onClick={e => onSubmit(e)}>Submit</button>
+                </div>
             </form>
-        </main>
-    )
+        </div>
+    );
 }
 
-export default LoginForm
+export default LoginForm;
