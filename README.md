@@ -11,25 +11,25 @@ This application is designed for people who travel but have a hard time finding 
 N/A
 
 ## Technologies
-React
-Redux
-Node
-Express
-PGAdmin
-Sequelize
-JWT
-Bcrypt
-Bootstrap
-Axios
-Render.com*
-Git
-Github
+* React
+* Redux
+* Node
+* Express
+* PGAdmin
+* Sequelize
+* JWT
+* Bcrypt
+* Bootstrap
+* Axios
+* Render.com - deployment
+* Git
+* Github
 
 ## Features
-Create an account
-Sign in
-Search for food and drink
-Create a notes list
+* Create an account
+* Sign in
+* Search for food and drink
+* Create a notes list
 
 ## Installation
 ```
