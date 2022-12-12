@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    'http://localhost:3007'
+    'https://local-guide.onrender.com/'
 ]
 
 module.exports = allowedOrigins
