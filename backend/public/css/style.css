@@ -14,6 +14,7 @@ body {
     height: 100vh;
     max-width: 100vw;
     min-height: 100vh;
+    margin: 0;
 }
 
 .App {
@@ -23,6 +24,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
+    
 }
 
   /* Nav Link CSS */
@@ -94,8 +96,7 @@ img {
 .clockContainer {
     display: inline;
     color: gold;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 30px;
 }
 
 
@@ -139,7 +140,7 @@ button.btn-block{
     color: whitesmoke;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-   
+    min-width: 30%;
 }
   
 button.btn-block:hover {
@@ -151,6 +152,7 @@ button.btn-block:hover {
   .form-group {
     display: flex;
     flex-direction: column;
+    text-align: center;
     padding: 10px;
     align-items: center;
     min-width: 40vw;
@@ -188,7 +190,7 @@ button.btn-block:hover {
 label.form-label {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    align-self: flex-start;
-    min-width: 40vw;
+    align-self: center;
+    min-width: 50vw;
 
 }

@@ -1,7 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const db = require("../models")
 
-const { Note} = db
+const { Note } = db
 
 
 //Create a new list of notes

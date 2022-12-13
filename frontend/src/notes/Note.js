@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Item({ item, index, markItem, removeItem }) {
   return (
+  
     <div className="itemList">
       <span style={{ textDecoration: item.isDone ? "line-through" : "" }}>{item.text}</span>
       <div>
@@ -11,6 +12,7 @@ function Item({ item, index, markItem, removeItem }) {
         <Button variant="outline-danger" onClick={() => removeItem(index)}>✕</Button>
       </div>
     </div>
+
   );
 }
 
@@ -25,6 +27,7 @@ function FormItem({ addItem }) {
   };
 
   return (
+    
     <div className="fixed-note-container">
     <Form onSubmit={handleSubmit}> 
     <Form.Group>
@@ -38,6 +41,7 @@ function FormItem({ addItem }) {
     <button className="btn-block" type="submit">Add Item</button>
   </Form>
   </div>
+ 
   );
 }
 
@@ -66,7 +70,6 @@ function Note() {
   return (
     <div className="noteApp">
       <div className="fixed-note-container">
-        
         <FormItem addItem={addItems} />
         <div>
           {item.map((item, index) => (
@@ -82,7 +85,6 @@ function Note() {
               </Card.Body>
             </Card>
           ))}
-
         </div>
       </div>
     </div>
