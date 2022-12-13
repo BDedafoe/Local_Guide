@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FaUser } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { register, reset } from '../auth/authSlice';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -54,7 +53,6 @@ const Register = () => {
     return (
         <div className="register-container">
             <h1>Register</h1>
-            <FaUser />
             <h3>Please create an account</h3>
             <form className="register-form" onSubmit={onSubmit}>
                 <div className="form-group">

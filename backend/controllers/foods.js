@@ -43,20 +43,6 @@ const db = require("../models")
 
 const { Food, Comment, User } = db
 
-router.post('/', async (req, res) => {
-    if (!req.body.pic) {
-        req.body.pic = 'http://placekitten.com/400/400'
-    }
-    if (!req.body.city) {
-        req.body.city = 'Anytown'
-    }
-    if (!req.body.state) {
-        req.body.state = 'USA'
-    }
-    const food = await Food.create(req.body)
-    res.json(food)
-})
-
 
 router.get('/', async (req, res) => {
     const foods = await Food.findAll()

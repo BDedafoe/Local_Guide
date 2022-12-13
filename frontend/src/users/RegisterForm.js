@@ -3,6 +3,7 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../app/axios';
 
+
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
@@ -92,9 +93,11 @@ function RegisterForm ({onSubmit}) {
                 </section>
             ) : (
                 <section>
+                    <div className="register-container">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form className="register-form" onSubmit={handleSubmit}>
+                        <div className="form-group">
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
@@ -102,7 +105,7 @@ function RegisterForm ({onSubmit}) {
                         </label>
                         <input
                             type="text"
-                            id="username"
+                            className="form-control"
                             ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setUser(e.target.value)}
@@ -113,6 +116,7 @@ function RegisterForm ({onSubmit}) {
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
+                        <br></br>
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
@@ -128,7 +132,7 @@ function RegisterForm ({onSubmit}) {
                         </label>
                         <input
                             type="password"
-                            id="password"
+                            className="form-control"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
@@ -137,6 +141,7 @@ function RegisterForm ({onSubmit}) {
                             onFocus={() => setPwdFocus(true)}
                             onBlur={() => setPwdFocus(false)}
                         />
+                        <br></br>
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
@@ -152,7 +157,7 @@ function RegisterForm ({onSubmit}) {
                         </label>
                         <input
                             type="password"
-                            id="confirm_pwd"
+                            className="form-control"
                             onChange={(e) => setMatchPwd(e.target.value)}
                             value={matchPwd}
                             required
@@ -161,20 +166,22 @@ function RegisterForm ({onSubmit}) {
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
                         />
+                        <br></br>
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             Must match the first password input field.
                         </p>
-
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button className="registerBtn" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        </div>
                     </form>
                     <p>
                         Already registered?<br />
                         <span className="line">
-                            {/*put router link here*/}
+                           
                             <a href="/login">Sign In</a>
                         </span>
                     </p>
+                    </div>
                 </section>
             )}
         </>

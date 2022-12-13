@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router"
-import CommentCard from './CommentCard'
-import NewCommentForm from "./NewCommentForm";
+import CommentCard from '../views/CommentCard'
+import NewCommentForm from "../views/NewCommentForm";
 
 function FoodDetails() {
 
@@ -13,7 +13,7 @@ function FoodDetails() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:4000/food/${placeId}`)
+			const response = await fetch(`http://localhost:4000/foods/${placeId}`)
 			const resData = await response.json()
 			setFood(resData)
 		}
@@ -25,18 +25,18 @@ function FoodDetails() {
 	}
 
 	function editFood() {
-		navigate(`/food/${food.foodId}/edit`)
+		navigate(`/foods/${food.foodId}/edit`)
 	}
 
 	async function deleteFood() {
-		await fetch(`http://localhost:4000/food/${food.foodId}`, {
+		await fetch(`http://localhost:4000/foods/${food.foodId}`, {
 			method: 'DELETE'
 		})
 		navigate('foods')
 	}
 
 	async function deleteComment(deletedComment) {
-		await fetch(`http://localhost:4000/food/${food.foodId}/comments/${deletedComment.commentId}`, {
+		await fetch(`http://localhost:4000/foods/${food.foodId}/comments/${deletedComment.commentId}`, {
 			method: 'DELETE'
 		})
 
@@ -48,7 +48,7 @@ function FoodDetails() {
 	}
 
 	async function createComment(commentAttributes) {
-		const response = await fetch(`http://localhost:4000/food/${food.foodId}/comments`, {
+		const response = await fetch(`http://localhost:4000/foods/${food.foodId}/comments`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

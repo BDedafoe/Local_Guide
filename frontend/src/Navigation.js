@@ -10,7 +10,7 @@ function Navigation() {
     const { currentUser } = useContext(CurrentUser)
 
     let loginActions = (
-        <div className="leftNav">
+        <div className="rightNav">
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/register">Register</Nav.Link>
@@ -38,16 +38,17 @@ function Navigation() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/food">Food</Nav.Link>
-                <Nav.Link href="/drink">Drinks</Nav.Link>
-                <Nav.Link href="/note">Notes</Nav.Link>
+                <Nav.Link href="/foods">Food</Nav.Link>
+                <Nav.Link href="/drinks">Drinks</Nav.Link>
+                <Nav.Link href="/notes">Notes</Nav.Link>
               </Nav>
 
-              <Clock/>
-
+              
+              {loginActions}
             </Navbar.Collapse>
-            {loginActions}
+           
           </Container>
+          <Clock/>
         </Navbar>
         </div>
     )

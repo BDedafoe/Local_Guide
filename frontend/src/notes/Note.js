@@ -25,14 +25,19 @@ function FormItem({ addItem }) {
   };
 
   return (
+    <div className="fixed-note-container">
     <Form onSubmit={handleSubmit}> 
     <Form.Group>
-      <Form.Label><b>In case you forget, make sure to take some notes!</b></Form.Label>
+      <Form.Label>
+        <h3>Too many things to do and to see?</h3>
+        <h3>Take some notes!</h3>
+      </Form.Label>
       <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Notes..." />
     </Form.Group>
     <br></br>
-    <button className="submitButton" type="submit">Add Item</button>
+    <button className="btn-block" type="submit">Add Item</button>
   </Form>
+  </div>
   );
 }
 
@@ -59,9 +64,9 @@ function Note() {
 
 
   return (
-    <div className="listApp">
-      <div className="fixed-list-container">
-        <h1 className="text-center mb-4">Take Notes!</h1>
+    <div className="noteApp">
+      <div className="fixed-note-container">
+        
         <FormItem addItem={addItems} />
         <div>
           {item.map((item, index) => (

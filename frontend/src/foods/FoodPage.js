@@ -9,7 +9,7 @@ function FoodPage(data) {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:4000/food`)
+			const response = await fetch(`http://localhost:4000/foods`)
 			const resData = await response.json()
 			setFoods(resData)
 		}
@@ -20,7 +20,7 @@ function FoodPage(data) {
 		return (
 			<div className="col-sm-6" key={food.foodId}>
 				<h2>
-					<a href="#" onClick={() => navigate(`/food/${food.foodId}`)} >
+					<a href="/" onClick={() => navigate(`/foods/${food.foodId}`)} >
 						{food.cuisine}
 					</a>
 				</h2>

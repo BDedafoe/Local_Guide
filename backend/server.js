@@ -34,10 +34,11 @@ app.get ('/', (req, res) =>
 
 app.use('/foods', require('./controllers/foods'));
 app.use('/drinks', require('./controllers/drinks'));
-// app.use('/user', require('./routes/userRoutes'));
+app.use('/notes', require('./controllers/notesController'));
+app.use('/user', require('./routes/userRoutes'));
 
 
-app.use('/api/User', require('./routes/userRoutes'));
+// app.use('/api/User', require('./routes/userRoutes'));
 
 // serve static front end in production mode
 if (process.env.NODE_ENV === "production") {

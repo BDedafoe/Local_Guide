@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { FaSignInAlt } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { login, reset } from '../auth/authSlice';
-
+import { Form } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({
@@ -44,12 +44,10 @@ const LoginForm = () => {
     
     return (
         <div className="login-container">
-            <h1>Login</h1>
-            <FaSignInAlt />
             <h3>Please sign in to your account</h3>
-            <form className="register-form">
+            <Form className="register-form">
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                    <Form.Label htmlFor="email">Email</Form.Label>
                     <input type="email"
                         className="form-control"
                         id="email"
@@ -57,7 +55,7 @@ const LoginForm = () => {
                         onChange={e => onChange(e)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                    <Form.Label htmlFor="password">Password</Form.Label>
                     <input type="password"
                         className="form-control"
                         id="password"
@@ -67,7 +65,7 @@ const LoginForm = () => {
                 <div className="form-group">
                 <button type="submit" className="btn-block" onClick={e => onSubmit(e)}>Submit</button>
                 </div>
-            </form>
+            </Form>
         </div>
     );
 }
